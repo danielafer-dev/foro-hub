@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/api
+    username: root
+    password: 123456789
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  flyway:
+    enabled: true
+
+api:
+  security:
+    secret: "12345678" # Cambiado a fijo para evitar fallos de validación
+
+logging:
+  level:
+    org.springframework.security: DEBUG # Esto te dirá en consola por qué da 403
